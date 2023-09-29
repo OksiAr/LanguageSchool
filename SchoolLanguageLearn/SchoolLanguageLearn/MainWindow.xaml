@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="149*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="190*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.RowSpan="2" Fill="#FFE7FABF"></Rectangle>
+        <Rectangle Grid.ColumnSpan="2" Fill="#FFE7FABF"></Rectangle>
+        <Image Source="/Resources/school_logo.png"></Image>
+        <TextBlock Grid.Column="1">Школа языков “Леарн”</TextBlock>
+
+
+
+
     </Grid>
 </Window>

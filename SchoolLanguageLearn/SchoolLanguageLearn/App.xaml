@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:SchoolLanguageLearn"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="TextBlock" >
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
          
     </Application.Resources>
 </Application>
