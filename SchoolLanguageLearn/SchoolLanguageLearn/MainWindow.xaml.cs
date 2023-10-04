@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,14 @@ namespace SchoolLanguageLearn
         public MainWindow()
         {
             InitializeComponent();
+            //var path = @"C:\Users\oksana.arkadeva\Desktop\Task321\Сессия 1\services_s_import\";
+            //foreach(var item in App.db.Service.ToArray())
+            //{
+            //    var fullPath = path + item.MainImagePath.Trim();
+            //    var imageByte = File.ReadAllBytes(fullPath);
+            //    item.MainImage= imageByte;
+            //}
+            //App.db.SaveChanges();
         }
     }
 }
