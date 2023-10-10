@@ -24,10 +24,12 @@ namespace SchoolLanguageLearn.Components
         public ServiceUserControl(Image image, string title, decimal cost, string costTime, string discount, Visibility costVisibility)
         {
             InitializeComponent();
-            //BitmapImage bitmapImage = new BitmapImage();
-            //bitmapImage.StreamSource = new MemoryStream(image);
-            //ServiceImg.Source =  bitmapImage as ImageSource;
-            CosTb.Text = cost.ToString();
+            if(App.isAdmin == false)
+            {
+                EditBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+            }         
+            CosTb.Text = cost.ToString("0");
             TitleTb.Text = title;
             CostTimeTb.Text = costTime;
             DiscountTb.Text = discount;

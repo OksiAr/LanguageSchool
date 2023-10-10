@@ -36,5 +36,22 @@ namespace SchoolLanguageLearn
 
             MainFrame.Navigate(new ServicesListPage());
         }
+
+        private void OnAdminBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (PasswordPb.Password == "0000")
+            {
+                App.isAdmin = true;
+                MainFrame.Navigate(new ServicesListPage());
+                PasswordPb.Clear();
+            }
+            
+        }
+
+        private void OffAdminBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.isAdmin = false;
+            MainFrame.Navigate(new ServicesListPage());
+        }
     }
 }

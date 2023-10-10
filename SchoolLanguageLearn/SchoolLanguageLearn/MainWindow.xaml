@@ -20,11 +20,18 @@
         <Image Source="/Resources/school_logo.png"></Image>
         <TextBlock HorizontalAlignment="Center" Grid.Column="1">Школа языков “Леарн”</TextBlock>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+            <Button x:Name="OnAdminBtn" Click="OnAdminBtn_Click">
+                <TextBlock FontSize="10">Включить<LineBreak/>админа</TextBlock>
+            </Button>
+            <PasswordBox x:Name="PasswordPb" Padding="5" Height="35" Margin="5"></PasswordBox>
+            <Button x:Name="OffAdminBtn" Click="OffAdminBtn_Click">
+                <TextBlock FontSize="10">Выключить<LineBreak/>админа</TextBlock>
+            </Button>
             <Button x:Name="BackBtn" >Назад</Button>
             <Button x:Name="ForwardBtn"> Вперед</Button>
         </StackPanel>
 
-        <Frame x:Name="MainFrame" Grid.Row="1" Grid.Column="1"></Frame>
+        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Row="1" Grid.Column="1"></Frame>
 
 
 

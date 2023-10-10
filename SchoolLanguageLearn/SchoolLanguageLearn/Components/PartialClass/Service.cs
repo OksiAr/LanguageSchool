@@ -16,7 +16,7 @@ namespace SchoolLanguageLearn.Components
                 if (Discount == 0)
                     return $" {Cost:0} рублей за {DurationInSeconds / 60} минут";
                 else
-                    return $" {Cost - (Cost * (decimal)Discount / 100) : 0} рублей за {DurationInSeconds / 60}";
+                    return $" {Cost - (Cost * (decimal)Discount / 100):0} рублей за {DurationInSeconds / 60} минут";
             }
         }
         public Visibility CostVisibility
@@ -27,6 +27,18 @@ namespace SchoolLanguageLearn.Components
                     return Visibility.Collapsed;
                 else
                     return Visibility.Visible;
+            }
+        }
+
+        public string DiscountStr
+        {
+            get
+            {
+                if (Discount == 0)
+                    return null;
+                else
+                    return $"* скидка {Discount}%";
+
             }
         }
     }
