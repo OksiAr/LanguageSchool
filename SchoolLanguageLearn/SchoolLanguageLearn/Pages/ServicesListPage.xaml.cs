@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SchoolLanguageLearn.Components;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,13 @@ namespace SchoolLanguageLearn.Pages
         public ServicesListPage()
         {
             InitializeComponent();
+            var services = App.db.Service.ToList();
+            foreach(var service in services)
+            {
+                ServiceWp.Children.Add(new ServiceUserControl(new Image(), service.Title, service.Cost, service.CostTime, service.Discount.ToString(), service.CostVisibility));
+            }
+
+
         }
     }
 }

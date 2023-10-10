@@ -65,6 +65,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\ServiceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +107,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Components\PartialClass\Service.cs" />
     <Compile Include="Components\Product.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -117,6 +122,9 @@
     </Compile>
     <Compile Include="Components\ServicePhoto.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ServiceUserControl.xaml.cs">
+      <DependentUpon>ServiceUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\sysdiagrams.cs">
       <DependentUpon>Model.tt</DependentUpon>

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SchoolLanguageLearn.Pages;
 
 namespace SchoolLanguageLearn
 {
@@ -32,6 +33,8 @@ namespace SchoolLanguageLearn
             //    item.MainImage= imageByte;
             //}
             //App.db.SaveChanges();
+
+            MainFrame.Navigate(new ServicesListPage());
         }
     }
 }
