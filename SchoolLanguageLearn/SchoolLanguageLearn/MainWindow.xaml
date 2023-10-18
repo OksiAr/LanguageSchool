@@ -28,7 +28,7 @@
                 <TextBlock FontSize="10">Выключить<LineBreak/>админа</TextBlock>
             </Button>
             <Button x:Name="BackBtn" >Назад</Button>
-            <Button x:Name="ForwardBtn"> Вперед</Button>
+
         </StackPanel>
 
         <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Row="1" Grid.Column="1"></Frame>
