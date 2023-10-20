@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using SchoolLanguageLearn.Pages;
 
 namespace SchoolLanguageLearn.Components
 {
@@ -21,7 +22,7 @@ namespace SchoolLanguageLearn.Components
     /// </summary>
     public partial class ServiceUserControl : UserControl
     {
-        Service service;
+        private Service service;
         public ServiceUserControl(Service _service)
         {
             InitializeComponent();
@@ -68,6 +69,11 @@ namespace SchoolLanguageLearn.Components
                 App.db.Service.Remove(service);
                 App.db.SaveChanges();
             }
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditServicePage()));
         }
     }
 }

@@ -84,5 +84,10 @@ namespace SchoolLanguageLearn.Pages
             Refresh();
 
         }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Добавление услуги", new AddEditServicePage()));
+        }
     }
 }

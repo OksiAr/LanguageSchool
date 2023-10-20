@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SchoolLanguageLearn.Pages;
+using SchoolLanguageLearn.Components;
 
 namespace SchoolLanguageLearn
 {
@@ -25,6 +26,7 @@ namespace SchoolLanguageLearn
         public MainWindow()
         {
             InitializeComponent();
+            Navigation.mainWindow = this;
             //var path = @"C:\Users\oksana.arkadeva\Desktop\Task321\Сессия 1\services_s_import\";
             //foreach(var item in App.db.Service.ToArray())
             //{
@@ -34,24 +36,35 @@ namespace SchoolLanguageLearn
             //}
             //App.db.SaveChanges();
 
-            MainFrame.Navigate(new ServicesListPage());
+            Navigation.NextPage(new PageComponent("Список услуг", new ServicesListPage()));
         }
 
         private void OnAdminBtn_Click(object sender, RoutedEventArgs e)
         {
             if (PasswordPb.Password == "0000")
-            {
+            {  
+                Navigation.ClearHistory();
                 App.isAdmin = true;
-                MainFrame.Navigate(new ServicesListPage());
+                Navigation.NextPage(new PageComponent("Список услуг", new ServicesListPage()));
+              
                 PasswordPb.Clear();
+               
             }
             
         }
 
         private void OffAdminBtn_Click(object sender, RoutedEventArgs e)
         {
+            Navigation.ClearHistory();
             App.isAdmin = false;
-            MainFrame.Navigate(new ServicesListPage());
+            Navigation.NextPage(new PageComponent("Список услуг", new ServicesListPage()));
+            
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.BackPage();
+
         }
     }
 }

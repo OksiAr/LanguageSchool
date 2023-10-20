@@ -16,5 +16,6 @@ namespace SchoolLanguageLearn
     {
         public static LanguaheSchool322Entities db = new LanguaheSchool322Entities();
         public static bool isAdmin = false;
+        public static MainWindow mainWindow;
     }
 }
