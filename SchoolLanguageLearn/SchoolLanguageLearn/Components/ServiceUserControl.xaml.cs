@@ -45,22 +45,27 @@ namespace SchoolLanguageLearn.Components
             BitmapImage bitmapImage = new BitmapImage();
             try
             {
-                MemoryStream byteStream = new MemoryStream(byteImage);  
-                bitmapImage.BeginInit();
-                bitmapImage.StreamSource = byteStream;
-                bitmapImage.EndInit();
+                if (service.MainImage != null)
+                {
+                    MemoryStream byteStream = new MemoryStream(byteImage);
+                    bitmapImage.BeginInit();
+                    bitmapImage.StreamSource = byteStream;
+                    bitmapImage.EndInit();
+                }
+                else
+                {
+                    bitmapImage = new BitmapImage(new Uri(@"\Resources\school_logo.png", UriKind.Relative));
+                }
             }
             catch
             {
                 MessageBox.Show("Error");
-
             }
-            return bitmapImage;  
+            return bitmapImage;
         }
-
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
-        { 
-            if(service.ClientService != null)
+        {
+            if (service.ClientService != null)
             {
                 MessageBox.Show("Удаление запрещено");
             }
@@ -73,7 +78,7 @@ namespace SchoolLanguageLearn.Components
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditServicePage()));
+            Navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditServicePage(service)));
         }
     }
 }
