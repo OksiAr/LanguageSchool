@@ -27,6 +27,7 @@ namespace SchoolLanguageLearn.Pages
         public AddEditServicePage(Service _service)
         {
             InitializeComponent();
+            App.servicePage = this;
             service = _service;
             this.DataContext = service;
             RefreshPhoto();
@@ -60,7 +61,7 @@ namespace SchoolLanguageLearn.Pages
                     App.db.Service.Add(service);
                 }
             }
-            if(service.DurationInSeconds > 14400)
+            if (service.DurationInSeconds > 14400)
             {
                 errors.AppendLine("Длительность не может привышать 4 часов");
             }
@@ -105,15 +106,21 @@ namespace SchoolLanguageLearn.Pages
 
             }
 
-           
+
         }
-        private void RefreshPhoto()
+        public void RefreshPhoto()
         {
             PhotoWp.Children.Clear();
             foreach (var photo in service.ServicePhoto)
             {
                 PhotoWp.Children.Add(new PhotoUserControl(photo));
             }
+            BitmapImage bitmapImage = new BitmapImage();
+            MemoryStream byteStream = new MemoryStream(service.MainImage);
+            bitmapImage.BeginInit();
+            bitmapImage.StreamSource = byteStream;
+            bitmapImage.EndInit();
+            MainImage.Source = bitmapImage;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

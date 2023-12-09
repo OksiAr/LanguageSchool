@@ -112,6 +112,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Components\Navigation.cs" />
+    <Compile Include="Components\PartialClass\Client.cs" />
+    <Compile Include="Components\PartialClass\ClientService.cs" />
     <Compile Include="Components\PartialClass\Service.cs" />
     <Compile Include="Components\PhotoUserControl.xaml.cs">
       <DependentUpon>PhotoUserControl.xaml</DependentUpon>
@@ -148,7 +150,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ClientRecordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ServicesListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UpcimongEntriesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,8 +171,17 @@
     <Compile Include="Pages\AddEditServicePage.xaml.cs">
       <DependentUpon>AddEditServicePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ClientRecordPage.xaml.cs">
+      <DependentUpon>ClientRecordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ServicesListPage.xaml.cs">
       <DependentUpon>ServicesListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UpcimongEntriesPage.xaml.cs">
+      <DependentUpon>UpcimongEntriesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

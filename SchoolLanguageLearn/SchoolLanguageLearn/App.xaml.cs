@@ -1,4 +1,5 @@
 ﻿using SchoolLanguageLearn.Components;
+using SchoolLanguageLearn.Pages;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,5 +18,6 @@ namespace SchoolLanguageLearn
         public static LanguaheSchool322Entities db = new LanguaheSchool322Entities();
         public static bool isAdmin = false;
         public static MainWindow mainWindow;
+        public static AddEditServicePage servicePage;
     }
 }

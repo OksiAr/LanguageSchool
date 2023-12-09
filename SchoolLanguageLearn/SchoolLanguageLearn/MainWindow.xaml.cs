@@ -36,7 +36,7 @@ namespace SchoolLanguageLearn
             //}
             //App.db.SaveChanges();
 
-            Navigation.NextPage(new PageComponent("Список услуг", new ServicesListPage()));
+            Navigation.NextPage(new PageComponent("Регистрация", new RegistrationPage()));
         }
 
         private void OnAdminBtn_Click(object sender, RoutedEventArgs e)

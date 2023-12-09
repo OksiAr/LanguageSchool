@@ -32,14 +32,16 @@ namespace SchoolLanguageLearn.Components
         {
             var selPhoto = servicePhoto.PhotoByte;
             servicePhoto.PhotoByte = servicePhoto.Service.MainImage;
-
-
+            servicePhoto.Service.MainImage = selPhoto;
+            App.servicePage.RefreshPhoto();
+            App.db.SaveChanges();
+            
         }
-
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {   
             App.db.ServicePhoto.Remove(servicePhoto);
             App.db.SaveChanges();
+            App.servicePage.RefreshPhoto();
         }
     }
 }
